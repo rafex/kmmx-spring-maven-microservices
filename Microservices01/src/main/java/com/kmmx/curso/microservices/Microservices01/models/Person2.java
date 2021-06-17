@@ -20,6 +20,7 @@ public class Person2 {
     }
 
     public Person2(long id, String name, String lastName) {
+        super();
         this.id = id;
         this.name = name;
         this.lastName = lastName;

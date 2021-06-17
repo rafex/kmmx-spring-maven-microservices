@@ -23,3 +23,13 @@
 hs_err_pid*
 
 *.zip
+
+mvnw
+mvnw.cmd
+.mvn/
+
+.idea/
+.classpath
+.project
+.settings/
+
