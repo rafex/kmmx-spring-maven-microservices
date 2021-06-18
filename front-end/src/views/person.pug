@@ -1,0 +1,30 @@
+extends includes/layout.pug
+
+block variables
+  - var pageClass = 'homepage is-preload';
+
+block title
+  title rafex.dev
+
+block meta
+  meta(name="description" content="this is a fork of the dopetrope template")
+  meta(name="keywords" content="template,theme,fork,dopetrope")
+  meta(name="author" content="@rafex")
+
+block scripts
+  script(defer src='vendor.min.js')
+  script(defer src='main.min.js')
+
+block content
+  h1 Person microservices integration
+  table#myTable.display
+    thead
+      tr
+        td Id
+        td Name
+        td Age
+    tbody
+      tr
+        td 0
+        td example
+        td example

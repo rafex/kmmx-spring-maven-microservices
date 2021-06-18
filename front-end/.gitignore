@@ -1,0 +1,40 @@
+# compiled output
+dist/
+package-lock.json
+yarn.lock
+
+# screenshots
+screenshots/
+
+# dependencies
+#node_modules/
+
+# IDEs and editors
+.idea/
+*.iml
+*.sublime-workspace
+.vscode
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+npm-debug.log
+yarn-error.log
+
+# System Files
+.DS_Store
+Thumbs.db
+
+# Eslint
+.eslintcache
+.angulardoc.json
+
+
+*.tar.gz
+*.zip

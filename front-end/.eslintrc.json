@@ -1,0 +1,18 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jquery": true
+    },
+    "plugins": [
+        "jquery"
+    ],
+    "rules": {
+        "no-unused-vars": 2,
+        "no-undef": 2
+    },
+    "parserOptions": {
+        "sourceType": "module"
+    }
+}

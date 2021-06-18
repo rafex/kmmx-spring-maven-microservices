@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/person")
@@ -33,9 +34,17 @@ public class PersonRest {
     @ResponseStatus(HttpStatus.OK)
     public List<Person> forName(@PathVariable String name) {
         Person person = new Person();
-        person.setName(name);
+        person.setFirstName(name);
         System.out.println("Request: " + person);
         List<Person> listPerson = personService.findName(person);
+        return listPerson;
+    }
+
+    @GetMapping("/name2/{name}")
+    @ResponseStatus(HttpStatus.OK)
+    public Set<Person> forName2(@PathVariable String name) {
+        System.out.println("Request: " + name);
+        Set<Person> listPerson = personService.findName(name);
         return listPerson;
     }
 
@@ -52,6 +61,26 @@ public class PersonRest {
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     public String delete(@PathVariable Long id){
+
         return personService.delete(id) ? "Eliminado" : "Algo fallo";
+
     }
+
+    @PutMapping
+    @ResponseStatus(HttpStatus.OK)
+    public Person update(@RequestBody Person person) {
+        System.out.println("Request: " + person);
+        Person updatePerson = personService.update(person);
+        return updatePerson;
+    }
+
+    @PutMapping("/{id}")
+    @ResponseStatus(HttpStatus.OK)
+    public Person update2(@PathVariable Long id,@RequestBody Person person) {
+        person.setId(id.longValue());
+        System.out.println("Request: " + person);
+        Person updatePerson = personService.update(person);
+        return updatePerson;
+    }
+
 }

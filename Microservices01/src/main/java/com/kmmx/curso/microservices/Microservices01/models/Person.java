@@ -11,7 +11,7 @@ public class Person {
     private long id;
 
     @Column(nullable = false)
-    private String name;
+    private String firstName;
 
     @Column(nullable = false)
     private String lastName;
@@ -20,9 +20,9 @@ public class Person {
         super();
     }
 
-    public Person(String name, String lastName){
+    public Person(String firstName, String lastName){
         super();
-        this.name = name;
+        this.firstName = firstName;
         this.lastName = lastName;
     }
 
@@ -34,12 +34,12 @@ public class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
     public String getLastName() {
@@ -55,19 +55,19 @@ public class Person {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Person person = (Person) o;
-        return id == person.id && Objects.equals(name, person.name) && Objects.equals(lastName, person.lastName);
+        return id == person.id && Objects.equals(firstName, person.firstName) && Objects.equals(lastName, person.lastName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, lastName);
+        return Objects.hash(id, firstName, lastName);
     }
 
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';
     }
