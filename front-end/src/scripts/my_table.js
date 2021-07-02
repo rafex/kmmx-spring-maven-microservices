@@ -8,6 +8,7 @@
       "sorting": true, // For sorting
       "aaData": data,
       "columns": [{
+        "check": "",
         "data": "id"
       }, {
         "data": "firstName"

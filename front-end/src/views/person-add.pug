@@ -1,0 +1,30 @@
+extends includes/layout.pug
+
+block variables
+  - var pageClass = 'homepage is-preload';
+
+block title
+  title rafex.dev
+
+block meta
+  meta(name="description" content="this is example")
+  meta(name="keywords" content="spring,boot,example")
+  meta(name="author" content="@rafex")
+
+block scripts
+  script(defer src='vendor.min.js')
+  script(defer src='main.min.js')
+
+block content
+  .container
+    form(method="POST" action="http://localhost:8081/api/person")
+      .form-row
+        .form-group.col-md-6
+          label(for='firstName') First Name
+          input#firstName.form-control(type='text' placeholder='First Name')
+        .form-group.col-md-6
+          label(for='lastName') Last Name
+          input#lastName.form-control(type='text' placeholder='Last Name')
+      button.btn.btn-primary(type='submit') Save
+  
+    
