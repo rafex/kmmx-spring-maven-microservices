@@ -31,6 +31,7 @@ public class PersonServiceTest {
     final Person personInput = new Person("Raul", "Gonzalez");
     final Person personServiceOutput = personService.create(personInput);
 
+    System.out.println(personServiceOutput);
     Assertions.assertEquals(responseEntity, personServiceOutput);
     
   }
